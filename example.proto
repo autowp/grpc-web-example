@@ -1,0 +1,17 @@
+syntax = "proto3";
+package grpc;
+
+option go_package = "vsk.ru/grpc-web-example/grpc";
+
+service Example {
+  rpc ascii(ExampleRequest) returns (ExampleResult) {}
+  rpc asciiStream(ExampleRequest) returns (stream ExampleResult) {}
+}
+
+message ExampleRequest {
+  string query = 1;
+}
+
+message ExampleResult {
+  string result = 1;
+}
